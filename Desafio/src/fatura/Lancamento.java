@@ -1,4 +1,4 @@
-package HistoricoFatura;
+package fatura;
 
 import java.time.LocalDate;
 
