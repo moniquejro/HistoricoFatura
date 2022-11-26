@@ -6,4 +6,5 @@ public enum CategoriaEnum {
 	ESCOLA,
 	MERCADO,
 	LAZER;
+	
 }
