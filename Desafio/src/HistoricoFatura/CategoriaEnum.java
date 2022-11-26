@@ -6,5 +6,10 @@ public enum CategoriaEnum {
 	ESCOLA,
 	MERCADO,
 	LAZER;
+
+	CategoriaEnum getCategoria() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
