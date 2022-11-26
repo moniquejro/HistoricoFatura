@@ -58,7 +58,7 @@ public class Main {
 		//Double tF = 0.00;
 		
 		List<Lancamento> lancamentosTotal = extrato.getLancamentos().stream().filter(l -> l.getCategoria() == CategoriaEnum.MERCADO && l.getData().getYear() == 2022 && l.getData().getMonthValue() == 4).collect(Collectors.toList());  
-		lancamentosTotal.forEach(l -> System.out.println("total mesma: "+l.getValor()));
+		lancamentosTotal.forEach(l -> System.out.println("total mesma:  "+l.getValor()));
 		
 
 		extrato.getLancamentos().stream().forEach(l -> {
