@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./scripts.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial;
+    }
+
+    /* estilo da aba */
+    .tab {
+      overflow: hidden;
+      justify-content: center;
+      border: 1px solid rgb(0, 0, 0);
+      border-radius: 5px;
+      background-color: #ffb356;
+      background-size: 100px 150px;
+      font-weight: bold;
+      margin-left: 40px;
+      margin-right: 500px;
+      text-align: center;
+    }
+
+    /* estilo do botão dentro da aba */
+    .tab button {
+      background-color: inherit;
+      justify-content: center;
+      align-items: center;
+      float: inherit;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.4s;
+      font-size: 1.5vw;
+    }
+
+    /* alterar cor do fundo dos btn ao passar o cursor */
+    .tab button:hover {
+      background-color: rgb(255, 207, 168);
+      border-radius: 5px;
+      justify-content: center;
+    }
+
+    /* criar classe tab ativa */
+    .tab button.active {
+      background-color: #ec6633;
+      border-radius: 5px;
+      justify-content: center;
+
+    }
+
+    /* conteudo da guia */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ec6633;
+      border-top: none;
+      border-radius: 5px;
+      justify-content: center;
+    }
+
+    .h3 {
+      font-size: 1.5vw;
+    }
+
+    .content1 {
+      height: 250px;
+      padding-top: 5px;
+      margin-top: 25px;
+      margin-right: 250px;
+      text-align: center;
+      border: 1px solid rgb(0, 0, 0);
+    }
+
+    .content2 {
+      height: 250px;
+      padding-top: 5px;
+      margin-top: 25px;
+      margin-right: 250px;
+      text-align: center;
+      border: 1px solid rgb(0, 0, 0);
+    }
+
+    .content3 {
+      height: 250px;
+      padding-top: 5px;
+      margin-top: 25px;
+      margin-right: 250px;
+      text-align: center;
+      border: 1px solid rgb(0, 0, 0);
+    }
+
+    .content4 {
+      height: 250px;
+      padding-top: 5px;
+      margin-top: 25px;
+      margin-right: 250px;
+      text-align: center;
+      border: 1px solid rgb(0, 0, 0);
+    }
+
+    .content5 {
+      height: 250px;
+      padding-top: 5px;
+      margin-top: 25px;
+      margin-right: 250px;
+      text-align: center;
+      border: 1px solid rgb(0, 0, 0);
+    }
+
+    #content1 {
+      height: 50px;
+    }
+    
+    #content1
+    #content2
+    #content3
+    #content4
+    #content5
+    {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      left: 0;
+      margin-top: -15px;
+      background-color: transparent;
+      z-index: -1;
+  </style>
+</head>
+
+<body>
+
+  <h2>Histórico Fatura</h2>
+  <p>Selecione uma das opções:</p>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openOpcoes(event, 'Lançamentos')">Lançamentos</button>
+    <button class="tablinks" onclick="openOpcoes(event, 'Categorias')">Categorias</button>
+    <button class="tablinks" onclick="openOpcoes(event, 'ResumoMes')">Resumo Mês</button>
+    <button class="tablinks" onclick="openOpcoes(event, 'Resumo')">Resumo</button>
+  </div>
+
+  <div id="Lançamentos" class="tabcontent">
+    <h3>Lançamentos</h3>
+    <p>Resumo de lançamentos.</p>
+    <ul>
+      <a href="#content1" class="tablinks2" onclick="openSubOpcoes(event, Saude)"> Saúde</a>
+      <a href="#content2"class="tablinks2" onclick="openSubOpcoes(event, Escola)"> Escola</a>
+      <a href="#content3"class="tablinks2" onclick="openSubOpcoes(event, Mercado)"> Mercado</a>
+      <a href="#content4"class="tablinks2" onclick="openSubOpcoes(event, Saude)"> Lazer</a>
+      <a href="#content5"class="tablinks2" onclick="openSubOpcoes(event, Todos)"> Todos</a>
+
+    </ul>
+
+      <div id="content1"></div>
+      <div class="content1">Lançamentos descriçao SAUDE
+      <p>Saude - 20/04/2022 - R$75.50</p>
+      </div>
+      <div id="content2"></div>
+      <div class="content2">Lançamentos descriçao ESCOLA
+      <p>Escola - 01/02/2022 - R$150.20</p>
+      </div>
+      <div id="content3"></div>
+      <div class="content3">Lançamentos descriçao MERCADO
+      <p id="M1">Mercado - 15/04/2022 - R$578.60</p><p id="M2">Mercado - 06/09/2022 - R$42.99</p><p id="M3">Mercado - 30/04/2022 - R$10.05</p>
+      </div>
+      <div id="content4"></div>
+      <div class="content4">Lançamentos descriçao LAZER
+      <p>Lazer - 05/05/2022 - R$298.10</p>
+      </div>
+      <div id="content5"></div>
+      <div class="content5">Lançamentos GERAL
+      <p>Saude - 20/04/2022 - R$75.50</p>
+      <p>Escola - 01/02/2022 - R$150.20</p>
+      <p>Mercado - 15/04/2022 - R$578.60</p>
+      <p>Mercado - 06/09/2022 - R$42.99</p>
+      <p>Mercado - 30/04/2022 - R$10.05</p>
+      <p>Lazer - 05/05/2022 - R$298.10</p>
+      </div>
+    
+  </div>
+
+  <div id="Categorias" class="tabcontent">
+    <h3>Categorias</h3>
+    <p>Resumo de categorias.</p>
+    <ul>
+      <li>Saúde</li>
+        <ul>R$75.50</ul>
+      <li>Escola</li>
+        <ul>R$150.20</ul>
+      <li>Mercado</li>
+        <ul>R$578.60</ul>
+        <ul>R$42.9</ul>
+        <ul>R$10.05</ul>
+      <li>Lazer</li>
+        <ul>R$298.10 </ul>
+    </ul>
+  </div>
+
+  <div id="ResumoMes" class="tabcontent">
+    <h3>Resumo do mês: Abril/22</h3>
+    <p></p>
+    <p>Saude - 20/04/2022 - R$75.50</p>
+    <p>Mercado - 15/04/2022 - R$578.60</p>
+    <p>Mercado - 30/04/2022 - R$10.05</p>
+  </div>
+
+  <div id="Resumo" class="tabcontent">
+    <h3>Resumo</h3>
+    <p></p>
+      <div>Resumo de todas as operações.
+        <p>Saude - 20/04/2022 - R$75.50</p>
+        <p>Escola - 01/02/2022 - R$150.20</p>
+        <p>Mercado - 15/04/2022 - R$578.60</p>
+        <p>Mercado - 06/09/2022 - R$42.99</p>
+        <p>Mercado - 30/04/2022 - R$10.05</p>
+        <p>Lazer - 05/05/2022 - R$298.10</p>
+      </div>
+  </div>
+
+  <script>
+    mav.addObject("lancamentos", str);
+
+    var lancamentos = [];
+
+    $.ajax({
+      url: '<c:url value="/lancamentos"/>',
+      type: 'GET',
+      success: function (data) {
+        for (var i = 0; i < data.length; i++) {
+          lancamentos.push(data[i]);
+          print(getSelection)
+        }
+      }
+    });
+
+    function openOpcoes(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    function openSubOpcoes(evt, cityName) {
+      var i, tabcontent2, tablinks2;
+      tabcontent2 = document.getElementsByClassName("tabcontent2");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent2[i].style.display = "none";
+      }
+      tablinks2 = document.getElementsByClassName("tablinks2");
+      for (i = 0; i < tablinks2.length; i++) {
+        tablinks2[i].className = tablinks2[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+
+</body>
+
+</html>
