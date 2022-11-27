@@ -42,4 +42,9 @@ import com.projectsuper.faturaproject.repositories.CategoryRepository;
 		return ResponseEntity.ok().body(cat);
 	}
 	
+	@GetMapping("/nome/{nome}")
+	public ResponseEntity<List<Categoria>> GetByNome(@PathVariable String nome){
+		return ResponseEntity.ok().finda;
+	}
+	
 }

@@ -24,11 +24,11 @@ import com.projectsuper.faturaproject.repositories.LancamentoRepository;
 	
 	@Autowired
 	//faz um pre-processamento e simplifica a dependencia
-	private LancamentoRepository lancamentoRepository;
+	private LancamentoRepository categoryRepository;
 	
 	@GetMapping
 	public ResponseEntity<List<Lancamento>> findAll(){
-		List<Lancamento> list = lancamentoRepository.findAll();
+		List<Lancamento> list = categoryRepository.findAll();
 		//esse findAll vai buscar tds os valores e devolver na lista
 		return ResponseEntity.ok().body(list);
 		//.ok é um metodo que instancia uma resposta, dizendo que está td certo. 
@@ -37,9 +37,9 @@ import com.projectsuper.faturaproject.repositories.LancamentoRepository;
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Lancamento> findById(@PathVariable Long id){
-		Lancamento lan = lancamentoRepository.findById(id);
+		Lancamento cat = categoryRepository.findById(id);
 		//aqui ele vai buscar pelo ID da requisição
-		return ResponseEntity.ok().body(lan);
+		return ResponseEntity.ok().body(cat);
 	}
 	
 }
