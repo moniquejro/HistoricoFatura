@@ -1,22 +1,34 @@
 package com.projectsuper.faturaproject.entities;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 
 
-public class Lancamento implements Comparable<Lancamento> {
-
+public class Lancamento implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	private Long id;
 	private Categoria categoria;
 	private LocalDate data;
 	private Double valor;
 	
+	private List<Lancamento> lancamentos = new ArrayList<>();
+	
+	public Lancamento(long l, String string, LocalDate data, double d) {
+	}
+
+	public Lancamento(long l, Categoria cat2, LocalDate now, double d) {
+	}
+
+	/*
 	@Override	
 	public int compareTo(Lancamento lancamento) {
 		return getData().compareTo(lancamento.getData());
-	}
+	}*/
 	
 	public Categoria getCategoria() {
 		return categoria;
@@ -72,8 +84,13 @@ public class Lancamento implements Comparable<Lancamento> {
 	
 	
 
+	public Lancamento(long l, String string, double d, Categoria cat1) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String toString() {
 		return "Lancamento [categoria=" + categoria + ", data=" + data + ", valor=" + valor + "]";
 	}
+	
 }

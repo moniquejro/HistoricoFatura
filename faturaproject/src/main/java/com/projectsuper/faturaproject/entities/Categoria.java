@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+//import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Categoria implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -11,9 +14,13 @@ public class Categoria implements Serializable{
 	private Long id;
 	private String name;
 	
+	@JsonIgnore
+	//pre-processamento p/ não serializar a lista de lançamentos de uma categoria
+	//@OneToMany(mappedBy = "categoria")
 	private List<Lancamento> lancamentos = new ArrayList<>();
 	
 	public Categoria() {
+		
 	}
 
 	public Long getId() {
@@ -46,7 +53,10 @@ public class Categoria implements Serializable{
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id);
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
 	}
 
 	@Override
