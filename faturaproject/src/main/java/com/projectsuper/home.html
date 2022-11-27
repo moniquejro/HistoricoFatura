@@ -8,6 +8,8 @@
   <style>
     body {
       font-family: Arial;
+      align-items: center;
+      margin-left: 150px;
     }
 
     /* estilo da aba */
@@ -20,7 +22,7 @@
       background-size: 100px 150px;
       font-weight: bold;
       margin-left: 40px;
-      margin-right: 500px;
+      margin-right: 250px;
       text-align: center;
     }
 
@@ -57,22 +59,31 @@
     /* conteudo da guia */
     .tabcontent {
       display: none;
-      padding: 6px 12px;
+      padding: 6px 120px;
       border: 1px solid #ec6633;
       border-top: none;
       border-radius: 5px;
+      margin-left: 40px;
+      margin-right: 250px;
       justify-content: center;
+      align-items: center;
     }
 
     .h3 {
       font-size: 1.5vw;
+      text-align: center;
     }
 
+    div{
+      align-items: center;
+      text-align: justify;
+    }
     .content1 {
       height: 250px;
       padding-top: 5px;
       margin-top: 25px;
-      margin-right: 250px;
+      margin-right: 50px;
+      border-radius: 5px;
       text-align: center;
       border: 1px solid rgb(0, 0, 0);
     }
@@ -81,7 +92,8 @@
       height: 250px;
       padding-top: 5px;
       margin-top: 25px;
-      margin-right: 250px;
+      margin-right: 50px;
+      border-radius: 5px;
       text-align: center;
       border: 1px solid rgb(0, 0, 0);
     }
@@ -90,7 +102,8 @@
       height: 250px;
       padding-top: 5px;
       margin-top: 25px;
-      margin-right: 250px;
+      margin-right: 50px;
+      border-radius: 5px;
       text-align: center;
       border: 1px solid rgb(0, 0, 0);
     }
@@ -99,7 +112,8 @@
       height: 250px;
       padding-top: 5px;
       margin-top: 25px;
-      margin-right: 250px;
+      margin-right: 50px;
+      border-radius: 5px;
       text-align: center;
       border: 1px solid rgb(0, 0, 0);
     }
@@ -108,13 +122,16 @@
       height: 250px;
       padding-top: 5px;
       margin-top: 25px;
-      margin-right: 250px;
+      margin-right: 50px;
+      border-radius: 5px;
       text-align: center;
       border: 1px solid rgb(0, 0, 0);
     }
 
     #content1 {
       height: 50px;
+      align-items: center;
+      text-align: justify;
     }
     
     #content1
@@ -124,10 +141,12 @@
     #content5
     {
       position: absolute;
+      align-items: center;
       width: 1px;
       height: 1px;
-      left: 0;
+      left: 150px;
       margin-top: -15px;
+      margin-left: 100px;
       background-color: transparent;
       z-index: -1;
   </style>
@@ -135,14 +154,14 @@
 
 <body>
 
-  <h2>Histórico Fatura</h2>
+  <h1>Histórico Fatura</h1>
   <p>Selecione uma das opções:</p>
 
   <div class="tab">
     <button class="tablinks" onclick="openOpcoes(event, 'Lançamentos')">Lançamentos</button>
     <button class="tablinks" onclick="openOpcoes(event, 'Categorias')">Categorias</button>
     <button class="tablinks" onclick="openOpcoes(event, 'ResumoMes')">Resumo Mês</button>
-    <button class="tablinks" onclick="openOpcoes(event, 'Resumo')">Resumo</button>
+    
   </div>
 
   <div id="Lançamentos" class="tabcontent">
@@ -158,19 +177,19 @@
     </ul>
 
       <div id="content1"></div>
-      <div class="content1">Lançamentos descriçao SAUDE
+      <div class="content1">Lançamentos SAUDE
       <p>Saude - 20/04/2022 - R$75.50</p>
       </div>
       <div id="content2"></div>
-      <div class="content2">Lançamentos descriçao ESCOLA
+      <div class="content2">Lançamentos ESCOLA
       <p>Escola - 01/02/2022 - R$150.20</p>
       </div>
       <div id="content3"></div>
-      <div class="content3">Lançamentos descriçao MERCADO
+      <div class="content3">Lançamentos MERCADO
       <p id="M1">Mercado - 15/04/2022 - R$578.60</p><p id="M2">Mercado - 06/09/2022 - R$42.99</p><p id="M3">Mercado - 30/04/2022 - R$10.05</p>
       </div>
       <div id="content4"></div>
-      <div class="content4">Lançamentos descriçao LAZER
+      <div class="content4">Lançamentos LAZER
       <p>Lazer - 05/05/2022 - R$298.10</p>
       </div>
       <div id="content5"></div>
