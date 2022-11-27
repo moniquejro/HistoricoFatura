@@ -76,7 +76,6 @@ public class Main {
 
 		// Mostrar o total de um mês específico de sua escolha
 
-		
 		System.out.println("\n" + "=============== Total fatura MÊS ABRIL/22 ===============" + "\n");
 
 		/**
@@ -125,7 +124,7 @@ public class Main {
 		System.out.println("\n" + "=============== Lista de categorias ===============" + "\n");
 
 		System.out.println(CategoriaEnum.getNames());
-		
+
 		System.out.println("\n" + "=============== Lista GERAL de lançamentos ===============" + "\n");
 		List<Lancamento> lancamentosTotal2 = extrato.getLancamentos().stream()
 				.filter(l -> l.getData().getYear() == 2022).collect(Collectors.toList());
@@ -158,8 +157,7 @@ public class Main {
 		System.out.println("|  [4] - LAZER		|");
 		System.out.println("|  [5] - TODOS		|");
 		System.out.println("|  [6] - RESUMO		|");
-		System.out.println("|  [7] - FATURA/ABRIL		|");
-		System.out.println("|  [8] - SAIR           |");
+		System.out.println("|  [7] - SAIR		|");
 
 		int operacao = input.nextInt();
 
@@ -183,9 +181,6 @@ public class Main {
 			opcaoResumo();
 			break;
 		case 7:
-			opcaoMes();
-			break;
-		case 8:
 			System.out.println("Obrigado por usar nossos serviços!");
 			System.exit(0);
 		default:
@@ -220,8 +215,9 @@ public class Main {
 				.filter(l -> l.getCategoria() == CategoriaEnum.SAUDE).collect(Collectors.toList());
 		lancamentosCategoria.forEach(l -> System.out.println("OPÇÃO [1]: " + l));
 
+		System.out.println("\n" + "----> Deseja fazer uma nova operação? <----");
 		operacoes();
-		// lembrar de colocar sysout perguntando p/ fazer nova escolha
+
 	}
 
 	public static void opcaoEscola() {
@@ -248,8 +244,9 @@ public class Main {
 				.filter(l -> l.getCategoria() == CategoriaEnum.ESCOLA).collect(Collectors.toList());
 		lancamentosCategoria.forEach(l -> System.out.println("OPÇÃO [2]: " + l));
 
+		System.out.println("\n" + "----> Deseja fazer uma nova operação? <----");
 		operacoes();
-		// lembrar de colocar sysout perguntando p/ fazer nova escolha
+
 	}
 
 	public static void opcaoMercado() {
@@ -277,8 +274,9 @@ public class Main {
 				.filter(l -> l.getCategoria() == CategoriaEnum.MERCADO).collect(Collectors.toList());
 		lancamentosCategoria.forEach(l -> System.out.println("OPÇÃO [3]: " + l));
 
+		System.out.println("\n" + "----> Deseja fazer uma nova operação? <----");
 		operacoes();
-		// lembrar de colocar sysout perguntando p/ fazer nova escolha
+
 	}
 
 	public static void opcaoLazer() {
@@ -306,8 +304,9 @@ public class Main {
 				.filter(l -> l.getCategoria() == CategoriaEnum.LAZER).collect(Collectors.toList());
 		lancamentosCategoria.forEach(l -> System.out.println("OPÇÃO [4]: " + l));
 
+		System.out.println("\n" + "----> Deseja fazer uma nova operação? <----");
 		operacoes();
-		// lembrar de colocar sysout perguntando p/ fazer nova escolha
+
 	}
 
 	public static void opcaoTodos() {
@@ -334,8 +333,9 @@ public class Main {
 		List<Lancamento> lancamentosCategoria = extrato.getLancamentos();
 		lancamentosCategoria.forEach(l -> System.out.println("OPÇÃO [5]: " + l));
 
+		System.out.println("\n" + "----> Deseja fazer uma nova operação? <----");
 		operacoes();
-		// lembrar de colocar sysout perguntando p/ fazer nova escolha
+
 	}
 
 	public static void opcaoResumo() {
@@ -359,39 +359,6 @@ public class Main {
 				.filter(l -> l.getCategoria() == CategoriaEnum.LAZER).collect(Collectors.toList());
 		lancamentosCategoria.forEach(l -> System.out.println("OPÇÃO [6]: " + l));
 
-		// lembrar de colocar sysout perguntando p/ fazer nova escolha
-	}
-	
-	public static void opcaoMes() {
-		
-		Pessoa pessoa = new Pessoa("Monique", "12345678900", "monique@gmail.com");
-
-		Conta conta = new Conta(1, pessoa);
-		Extrato extrato = new Extrato();
-		extrato.setConta(conta);
-		//Double totalFatura = 0.00;
-		
-		List<Lancamento> lancamentos = new ArrayList<>();
-
-		lancamentos.add(new Lancamento(CategoriaEnum.ESCOLA, LocalDate.of(2022, 4, 20), 75.50));
-		lancamentos.add(new Lancamento(CategoriaEnum.SAUDE, LocalDate.of(2022, 2, 1), 150.20));
-		lancamentos.add(new Lancamento(CategoriaEnum.LAZER, LocalDate.of(2022, 5, 5), 298.10));
-		lancamentos.add(new Lancamento(CategoriaEnum.MERCADO, LocalDate.of(2022, 4, 15), 578.60));
-		lancamentos.add(new Lancamento(CategoriaEnum.MERCADO, LocalDate.of(2022, 9, 6), 42.99));
-		lancamentos.add(new Lancamento(CategoriaEnum.MERCADO, LocalDate.of(2022, 4, 30), 10.05));
-	
-
-		List<Lancamento> lancamentosMes = extrato.getLancamentos().stream()
-				.filter(l -> (l.getData().getYear() == 2022 && l.getData().getMonthValue() == 4))
-				.collect(Collectors.toList());
-
-		Double totalMes = 0.00;
-
-		for (Lancamento lancamento : lancamentosMes) {
-
-			totalMes = totalMes + lancamento.getValor();
-		}
-		System.out.println("totMesMenu: " + totalMes);
 	}
 
 	// Obter lançamento por ID
