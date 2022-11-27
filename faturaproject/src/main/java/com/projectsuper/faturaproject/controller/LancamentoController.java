@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.projectsuper.faturaproject.entities.Categoria;
 import com.projectsuper.faturaproject.entities.Lancamento;
 import com.projectsuper.faturaproject.repositories.LancamentoRepository;
 
@@ -41,5 +42,9 @@ import com.projectsuper.faturaproject.repositories.LancamentoRepository;
 		//aqui ele vai buscar pelo ID da requisição
 		return ResponseEntity.ok().body(cat);
 	}
-	
+	/*
+	@GetMapping("/nome/{nome}")
+	public ResponseEntity<List<Categoria>> GetByNome(@PathVariable String nome){
+		return ResponseEntity.ok();
+	*/
 }

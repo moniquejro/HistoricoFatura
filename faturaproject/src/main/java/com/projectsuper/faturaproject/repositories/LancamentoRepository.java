@@ -32,4 +32,9 @@ public class LancamentoRepository {
 		//vai ler tds os valores do map e instanciar em uma lista
 		
 	}
+	/*
+	public List<Lancamento> findByName(){
+		return new ArrayList<Lancamento>(.findByName());
+	}
+	*/
 }
