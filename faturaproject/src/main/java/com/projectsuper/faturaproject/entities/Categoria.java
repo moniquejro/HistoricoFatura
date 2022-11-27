@@ -1,6 +1,8 @@
 package com.projectsuper.faturaproject.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Categoria implements Serializable{
@@ -8,6 +10,8 @@ public class Categoria implements Serializable{
 	
 	private Long id;
 	private String name;
+	
+	private List<Lancamento> lancamentos = new ArrayList<>();
 	
 	public Categoria() {
 	}
@@ -33,6 +37,12 @@ public class Categoria implements Serializable{
 		this.id = id;
 		this.name = name;
 	}
+
+		
+	public List<Lancamento> getLancamentos() {
+		return lancamentos;
+	}
+
 
 	@Override
 	public int hashCode() {
