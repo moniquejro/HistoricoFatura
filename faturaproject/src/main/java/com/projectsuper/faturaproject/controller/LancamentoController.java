@@ -1,4 +1,4 @@
-package com.projectsuper.faturaproject.resources;
+package com.projectsuper.faturaproject.controller;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import com.projectsuper.faturaproject.repositories.LancamentoRepository;
 //para o spring reconhecer a classe como um recurso
 @RequestMapping(value = "/lancamentos")
 //mapeamento de URL
-	public class LancamentoResource {
+	public class LancamentoController {
 
 	//private LancamentoRepository categoryRepository = new LancamentoRepository();
 	//maneira ruim de compor obj; existe o problema de auto-acoplamento e p/ cada resource que criar seria um inserido pra cada new

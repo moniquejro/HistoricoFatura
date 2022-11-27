@@ -1,4 +1,4 @@
-package com.projectsuper.faturaproject.resources;
+package com.projectsuper.faturaproject.controller;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import com.projectsuper.faturaproject.repositories.CategoryRepository;
 //para o spring reconhecer a classe como um recurso
 @RequestMapping(value = "/categories")
 //mapeamento de URL
-	public class CategoryResource {
+	public class CategoryController {
 
 	//private CategoryRepository categoryRepository = new CategoryRepository();
 	//maneira ruim de compor obj; existe o problema de auto-acoplamento e p/ cada resource que criar seria um inserido pra cada new
@@ -42,9 +42,11 @@ import com.projectsuper.faturaproject.repositories.CategoryRepository;
 		return ResponseEntity.ok().body(cat);
 	}
 	
+	/*
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Categoria>> GetByNome(@PathVariable String nome){
-		return ResponseEntity.ok().finda;
+		Categoria cat = categoryRepository.findById(cat);
+		return ResponseEntity.ok().body(null);
 	}
-	
+	*/
 }

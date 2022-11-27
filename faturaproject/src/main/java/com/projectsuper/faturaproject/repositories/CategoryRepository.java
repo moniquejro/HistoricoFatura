@@ -7,6 +7,7 @@ import java.util.Map;
 //mapa ou dicionario de chave/valor, busca de uma maneira mais prática
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.projectsuper.faturaproject.entities.Categoria;
 
@@ -23,8 +24,9 @@ public class CategoryRepository {
 		map.put(obj.getId(), obj);
 	}
 	
-	public Categoria findById(Long id) {
-		return map.get(id);
+	
+	public Categoria findById(@PathVariable Long id) {
+		return map.get(id);	
 	}
 	
 	public List<Categoria> findAll(){
