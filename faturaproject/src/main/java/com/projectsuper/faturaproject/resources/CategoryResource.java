@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.projectsuper.faturaproject.entities.Categoria;
 import com.projectsuper.faturaproject.entities.CategoriaEnum;
 
 @RestController
@@ -18,18 +19,19 @@ import com.projectsuper.faturaproject.entities.CategoriaEnum;
 	public class CategoryResource {
 
 	@GetMapping
-	public ResponseEntity<List<CategoriaEnum>> findAll(){
-		List<CategoriaEnum> list = new ArrayList<>();
-		System.out.println(CategoriaEnum.getNames());
+	public ResponseEntity<List<Categoria>> findAll(){
+		List<Categoria> list = new ArrayList<>();
+		list.add(new Categoria(1L, "Saúde"));
+		list.add(new Categoria(2L, "Educação"));
 		return ResponseEntity.ok().body(list);
 		//.ok é um metodo que instancia uma resposta, dizendo que está td certo. 
 		//É uma resposta da categoria 200 do protocolo http
 	}
-
+/*
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<CategoriaEnum> findById(@PathVariable Long id){
 		System.out.println(CategoriaEnum.getNames());
 		return ResponseEntity.ok().body();
 	}
-	
+	*/
 }
