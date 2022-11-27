@@ -35,7 +35,7 @@ public class FaturaprojectApplication implements CommandLineRunner {
 		Categoria cat2 = new Categoria(2L, "Escola");
 		Categoria cat3 = new Categoria(3L, "Mercado");
 		Categoria cat4 = new Categoria(4L, "Lazer");
-		Categoria cat5 = new Categoria(5L, "Todos");
+		Categoria cat5 = new Categoria(5L, "Saúde, Escola, Mercado, Lazer");
 		Categoria cat6 = new Categoria(6L, "Resumo");
 		//esses metodos vao ser salvos dentro do save MAP
 		

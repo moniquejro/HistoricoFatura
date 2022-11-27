@@ -14,6 +14,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Categoria implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	//@Id
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//Caso fosse auto increment iria gerar o ID_categoria/ID_lancamento, porém temos uma lista pre definida
 	private Long id;
 	private String name;
 	
